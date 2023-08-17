@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html class="dark__mode" lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,14 +7,43 @@
     <title>Open Music</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
     <link rel="stylesheet" href="./src/styles/globalStyles.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
 
-    <!-- SCRIPTS  -->
+    <script src="./src/scrpts/index.js" type="module" defer></script>
   </head>
+
   <body>
-    <header></header>
-    <main></main>
+    <header class="header__container">
+        <h1 class="header__title">open music</h1>
+        <button class="header__button">Dark</button>
+    </header>
+
+    <main>
+        <section class="container__main">
+            <div class="div__music">
+                <h2 class="music__title">Gênero Musical</h2>
+                <ul class="music__gender">
+
+                </ul>
+            </div>
+            
+            <div class="div__price">
+              <div class="div__price__range">
+                <h2 class="price__title">Definir Preço</h2>
+                <p class="price__range">Até R$...</p>
+              </div>
+                <input id="rangeInput" class="input__price__range" type="range" min="0" max="50" step="1" value="0">
+            </div>
+        </section>
+
+        <section class="container__albuns">
+          <h2 class="album__title">Álbuns Encontrados</h2>
+          <ul class="album__list">
+
+          </ul>
+        </section>
+    </main>
   </body>
 </html>

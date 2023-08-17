@@ -48,3 +48,18 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-grey-9);
 }
+
+.font1{
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.sont2{
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.font3{
+  font-size: 16px;
+  font-weight: 500;
+}
