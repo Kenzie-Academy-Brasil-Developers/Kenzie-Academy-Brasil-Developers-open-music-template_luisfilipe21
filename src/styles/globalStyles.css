@@ -45,21 +45,37 @@
 body {
   font-family: "Inter", sans-serif;
   font-style: normal;
+
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-grey-9);
 }
-
-.font1{
+.title1{
   font-weight: 600;
-  font-size: 28px;
+  font-size: 1.75rem;  
+  line-height: 2.1181rem;
 }
 
-.sont2{
+.font1{
+  font-weight: 500;
+  font-size: 0.75rem;  
+  line-height: 0.9075rem;
+}
+
+.font2{
   font-weight: 600;
-  font-size: 16px;
+  font-size: 0.875rem;
+  line-height: 1.0588rem;;
 }
 
 .font3{
-  font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.21rem;
+}
+
+.limita__secao{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+  box-sizing: border-box;
 }

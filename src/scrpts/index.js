@@ -17,16 +17,21 @@ const createCard = (array) => {
 
     const {id, title, price, img, band, year, category} = array;
     
+    card.classList.add('list__card');
+    divContainer.classList.add('list__div__container');
+    divImg.classList.add('list__div__img');
+    divInfoBand.classList.add('list__div__info');
+
     imgAlbum.src = img;
     imgAlbum.alt = 'Capa do Álbum'
 
-    bandName.classList.add('font2');
-    bandName.innerText = `${band} ${year}`;
+    bandName.classList.add('font1');
+    bandName.innerText = `${band}       ${year}`;
 
-    albumName.classList.add('font1');
+    albumName.classList.add('font3');
     albumName.innerText = title;
 
-    spanP.classList.add('font1');
+    spanP.classList.add('font2');
     spanP.innerText = `R$ ${price},00`;
 
     spanButton.classList.add('button__buy');
@@ -49,7 +54,9 @@ const renderButtons = (array) =>{
     array.forEach((button) => {
         const listButton = document.createElement('li');
         const buttonGender = document.createElement('button');
-        buttonGender.innerText = button
+        
+        buttonGender.classList.add('music__gender__btn');
+        buttonGender.innerText = button;
 
         listButton.appendChild(buttonGender);
         mainList.appendChild(listButton);
@@ -67,5 +74,52 @@ const renderCard = (array) => {
     })
 }
 
+const filterCard = (arrayProducts, arrayCategories) =>{
+    const categorieButtons = document.querySelectorAll('.music__gender__btn');
+    const inputPrice = document.querySelector('.input__price__range');
+
+    let filteredArray = arrayProducts;
+    let categoryIndex  = 0;
+    let inputValue = inputPrice.value;
+
+    inputPrice.addEventListener('input', (event) =>{
+        const price = document.querySelector('.price__range');
+        const valueInput = event.target.value
+        inputValue = valueInput;
+        
+        price.innerText = `Até R$ ${inputValue}`;
+
+        // const filterPrice = arrayProducts.filter((prices) => prices.price <= inputValue);
+        if(categoryIndex === 0){ 
+            const productsFiltered = arrayProducts.filter((product) => product.price <= inputValue);
+            filteredArray = productsFiltered
+            // renderCard(filteredArray)    
+        }else{
+            const productsFiltered = arrayProducts.filter((product)=> product.category == categoryIndex && product.price <= inputValue);
+            filteredArray = productsFiltered
+        }   
+        renderCard(filteredArray)
+    })
+    
+    categorieButtons.forEach((categories) =>{
+        categories.addEventListener('click', (event) =>{
+            const findCategory = categories.innerText;
+            categoryIndex = arrayCategories.indexOf(findCategory);
+            
+            if(categoryIndex === 0){ 
+                const productsFiltered = arrayProducts.filter((product) => product.price <= inputValue);
+                filteredArray = productsFiltered
+                // renderCard(filteredArray)    
+            }else{
+                const productsFiltered = arrayProducts.filter((product)=> product.category == categoryIndex && product.price <= inputValue);
+                filteredArray = productsFiltered
+            }   
+            renderCard(filteredArray)
+        })
+    })
+}
+
+
 renderButtons(categories)
 renderCard(products)
+filterCard(products, categories)
