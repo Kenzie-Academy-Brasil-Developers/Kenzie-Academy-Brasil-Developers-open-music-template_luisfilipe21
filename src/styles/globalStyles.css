@@ -49,6 +49,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-grey-9);
 }
+
 .title1{
   font-weight: 600;
   font-size: 1.75rem;  

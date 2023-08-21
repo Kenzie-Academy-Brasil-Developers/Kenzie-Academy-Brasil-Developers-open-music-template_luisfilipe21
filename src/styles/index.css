@@ -1,4 +1,4 @@
-.header__container{
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,12 +6,31 @@
     height: 3rem;
 }
 
-.container__info{
+.header__title {
+    color: var(--color-grey-0)
+}
+
+.header__button {
+    border-radius: var(--radius-1);
+    background-color: transparent;
+    border: none;
+    background-color: var(--color-grey-8);
+}
+
+.img__button {
+    object-fit: cover;
+    width: 1.125rem;
+    height: 1.25rem;
+    line-height: 1.15rem;
+    transition: 1s;
+}
+
+.container__info {
     width: 100%;
     padding: 1.5rem;
 }
 
-.container__main{
+.container__main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -20,11 +39,12 @@
     justify-content: center;
 }
 
-.music__title{
+.music__title {
     margin: 4rem 0;
+    color: var(--color-grey-0);
 }
 
-.music__gender{
+.music__gender {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -33,7 +53,7 @@
     width: 95%;
 }
 
-.music__gender  li  button{
+.music__gender li button {
     width: 63px;
     height: 2rem;
     padding: 0 0.5rem 0 0.5rem;
@@ -48,33 +68,40 @@
     justify-content: center;
 }
 
-.music__gender > li > button:hover{
+.music__gender>li>button:hover {
     background-color: var(--color-grey-1);
     color: var(--color-grey-8);
 }
-.price__range{
+
+.price__range {
     font-weight: 500;
 }
 
 
-.div__price{
+.div__price {
     width: 100%;
 }
 
-.div__price__range{
+.div__price__range {
     display: flex;
     justify-content: space-between;
+
+    color: var(--color-grey-0);
+    margin-top: 3.5rem;
 }
 
-.input__price__range{
+.input__price__range {
     width: 100%;
     margin: 2rem 0;
+    color: var(--color-brand-1);
 }
 
-.album__title{
-    margin: 2rem 0 4rem 1.5rem;;
+.album__title {
+    margin: 2rem 0 4rem 1.5rem;
+    color: var(--color-grey-0);
 }
-.album__list{
+
+.album__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -82,7 +109,7 @@
     margin-bottom: 5rem;
 }
 
-.list__card{
+.list__card {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -92,44 +119,49 @@
     margin-bottom: 3rem;
 }
 
-.list__div__container{
+.list__div__container {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.list__div__img{
+.list__div__img {
     width: 100%;
 
 }
 
-.list__div__img img{
+.list__div__img img {
     object-fit: cover;
     width: 100%;
-    
+
     border-radius: 4px 4px 0 0;
 }
 
-.list__div__info{
+.list__div__info {
     height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
+
+    color: var(--color-grey-0);
+
 }
-.list__div__info > span > p{
+
+.list__div__info>span>p {
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.0588rem;
 }
 
-.list__div__info > span, button{
+.list__div__info>span,
+button {
     display: flex;
     align-items: center;
-    justify-content: space-between;;
+    justify-content: space-between;
 }
 
-.list__div__info > span > button{
+.list__div__info>span>button {
     width: 4.6875rem;
     height: 2rem;
     gap: 0.625rem;
@@ -138,4 +170,19 @@
     border: 1px;
     justify-content: center;
     background-color: var(--color-grey-7)
+}
+
+#rangeInput{
+    appearance: none;
+    background-color: var(--color-brand-1);
+    border-radius: 10px;
+}
+
+#rangeInput::-webkit-slider-thumb{
+    /* appearance: none; */
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    z-index: 5;
+
 }

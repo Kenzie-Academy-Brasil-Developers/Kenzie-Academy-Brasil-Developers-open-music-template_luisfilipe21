@@ -1,4 +1,5 @@
 import {products, categories} from './productsData.js'
+import { darkMode } from './theme.js'
 
 const createCard = (array) => {
     const card = document.createElement('li');
@@ -75,7 +76,7 @@ const renderCard = (array) => {
 }
 
 const filterCard = (arrayProducts, arrayCategories) =>{
-    const categorieButtons = document.querySelectorAll('.music__gender__btn');
+    const categoryButtons = document.querySelectorAll('.music__gender__btn');
     const inputPrice = document.querySelector('.input__price__range');
 
     let filteredArray = arrayProducts;
@@ -101,7 +102,7 @@ const filterCard = (arrayProducts, arrayCategories) =>{
         renderCard(filteredArray)
     })
     
-    categorieButtons.forEach((categories) =>{
+    categoryButtons.forEach((categories) =>{
         categories.addEventListener('click', (event) =>{
             const findCategory = categories.innerText;
             categoryIndex = arrayCategories.indexOf(findCategory);
@@ -123,3 +124,4 @@ const filterCard = (arrayProducts, arrayCategories) =>{
 renderButtons(categories)
 renderCard(products)
 filterCard(products, categories)
+darkMode();
